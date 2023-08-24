@@ -1,0 +1,16 @@
+{
+  "name": "testing-tama",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/bigquery": "^7.2.0",
+    "json-assert": "^1.0.2"
+  }
+}
