@@ -28,8 +28,8 @@ export async function prepareArgs() {
 		args[k] = v;
 	});
 
-	args.fromDate = args.fromDate || now.toISOString();
-	args.toDate = args.toDate || getToDate(now);
+	args.toDate = args.toDate || now.toISOString();
+	args.fromDate = args.fromDate || getFromDate(now);
 
 	if (!args.projectId) {
 		const lineReader = readline.createInterface({
@@ -45,9 +45,9 @@ export async function prepareArgs() {
 	return args;
 }
 
-function getToDate(fromDate) {
-	const toDate = new Date(fromDate).setDate(fromDate.getDate() - 3);
-	return new Date(toDate).toISOString();
+function getFromDate(toDate) {
+	const fromDate = new Date(toDate).setDate(toDate.getDate() - 3);
+	return new Date(fromDate).toISOString();
 }
 
 export function prepareQuery(title, args) {
