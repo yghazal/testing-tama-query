@@ -59,7 +59,7 @@ async function queryBatch(query) {
 	const state = job.metadata.status.state;
 	console.log(`Job ${jobId} is currently in state ${state}`);
 
-	const [rows] = await job.getQueryResults({ autoPaginate: false });
+	const [rows] = await job.getQueryResults({ autoPaginate: false, timeoutMs: 300000 });
 	return rows;
 }
 
